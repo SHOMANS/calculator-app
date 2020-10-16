@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+.btns {
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-around;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.btns button {
+  width: 64px;
+  height: 66px;
+  border-radius: 50%;
+  margin: 10px;
+  border: none;
+  color: #FFFFFF;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.light-purple {
+  background-color: #8490ff;
+}
+.dark-purple {
+  background-color: #34509e;
+}
+.dark-brown {
+  background-color: #212638;
+}
+
+.dark-brown-zero {
+  background-color: #212638;
+  width: 146px !important;
+  border-radius: 50px !important;
+  text-align: left;
+  padding-left: 25px;
+}

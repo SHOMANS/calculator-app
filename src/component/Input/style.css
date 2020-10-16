@@ -1,0 +1,10 @@
+.input-output {
+  font-family: "Courier New", Courier, monospaceChathura;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 80px;
+  text-align: right;
+  overflow: hidden;
+  min-height: 230px;
+  padding: 35px 35px 0;
+}
