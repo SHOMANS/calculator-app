@@ -7,4 +7,7 @@
   overflow: hidden;
   min-height: 230px;
   padding: 35px 35px 0;
+  width: 100%;
+  border: none;
+  resize: none;
 }

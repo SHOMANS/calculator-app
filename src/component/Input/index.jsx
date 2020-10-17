@@ -4,15 +4,17 @@ import "./style.css";
 
 class Input extends React.Component {
   render() {
-    const { inInput1, inInput2, calculation } = this.props;
+    const { inInput1, inInput2, calculation, press, myRef } = this.props;
     return (
-      <div className="input-output">
-        <div>{inInput1 || ""}</div>
-        <div>
-          {calculation}
-          {inInput2}
-        </div>
-      </div>
+      <textarea
+        className="input-output"
+        type="text"
+        autoFocus
+        value={`${inInput1 || ""}${calculation}${inInput2}`}
+        onKeyPress={(event) => press(event)}
+        ref={myRef}
+        readOnly
+      />
     );
   }
 }

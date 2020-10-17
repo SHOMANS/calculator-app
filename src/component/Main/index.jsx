@@ -1,6 +1,7 @@
 import React from "react";
 import Input from "../Input/index";
 import Btns from "../Btns/index";
+import numbers, { operators } from "../utils";
 
 import "./style.css";
 
@@ -18,7 +19,6 @@ class Main extends React.Component {
   };
 
   plusMinus = () => {
-    console.log(this.state.inInput2);
     this.setState((prevState) => {
       return {
         inInput2: prevState.inInput2 * -1,
@@ -33,14 +33,16 @@ class Main extends React.Component {
     });
   };
 
-  click = (e) => {
-    const { name } = e.target;
-    console.log(name);
+  click = (e, name) => {
+    let _name = name;
+    if (!_name) {
+      _name = e.target.name;
+    }
     this.setState((prevState) => {
       if (this.state.inInput2 === "0") {
-        return { inInput2: `${name}` };
+        return { inInput2: `${_name}` };
       }
-      return { inInput2: `${prevState.inInput2}${name}` };
+      return { inInput2: `${prevState.inInput2}${_name}` };
     });
   };
 
@@ -75,7 +77,6 @@ class Main extends React.Component {
   };
 
   multiplied = () => {
-    console.log(this.state.inInput2);
     this.setState((prevState) => {
       return {
         inInput1:
@@ -87,8 +88,6 @@ class Main extends React.Component {
   };
 
   divided = () => {
-    console.log(this.state.inInput1);
-    console.log(this.state.inInput2);
     this.setState((prevState) => {
       return {
         inInput1:
@@ -100,8 +99,6 @@ class Main extends React.Component {
   };
 
   dividedFunc = () => {
-    console.log(this.state.inInput1);
-    console.log(this.state.inInput2);
     this.setState((prevState) => {
       return {
         inInput1:
@@ -132,6 +129,24 @@ class Main extends React.Component {
     });
   };
 
+  press = (event) => {
+    event.preventDefault();
+    const pressed = event.key;
+    if (numbers[pressed]) {
+      this.click(null, pressed);
+    }
+    if (operators[pressed]) {
+      this[operators[pressed]]();
+    }
+  };
+
+  myRef = React.createRef();
+
+  componentDidUpdate() {
+    const node = this.myRef.current;
+    node.focus();
+  }
+
   render() {
     const { inInput1, inInput2, calculation } = this.state;
     return (
@@ -140,6 +155,8 @@ class Main extends React.Component {
           inInput1={inInput1}
           inInput2={inInput2}
           calculation={calculation}
+          press={this.press}
+          myRef={this.myRef}
         />
         <Btns
           click={this.click}
