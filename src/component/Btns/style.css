@@ -3,12 +3,13 @@
 }
 
 .btns {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: flex;
   justify-content: space-around;
   align-content: flex-start;
   flex-wrap: wrap;
   padding: 10px;
+  background: inherit;
 }
 
 .btns button {
@@ -17,9 +18,60 @@
   border-radius: 50%;
   margin: 10px;
   border: none;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 36px;
   font-weight: 400;
+  cursor: pointer;
+  position: relative;
+}
+
+.btns button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 66px;
+  border-radius: 50%;
+  background-color: #999;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.7s ease;
+  transform: scale(0);
+}
+
+.btns button:hover::after {
+  box-shadow: #8490ff 5px 5px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+  opacity: 0.;
+  transform: scale(1.1);
+}
+
+.btns button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 66px;
+  border-radius: 50%;
+  background-color: #666;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: scale(0);
+}
+
+.btns button:hover::before {
+  box-shadow: #8490ff 5px 5px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+  opacity: 0.1;
+  transform: scale(1.1);
+}
+
+.btns button:focus {
+  border: none;
+  outline: none;
 }
 
 .light-purple {
@@ -38,4 +90,13 @@
   border-radius: 50px !important;
   text-align: left;
   padding-left: 25px;
+}
+
+.dark-brown-zero::after {
+  width: 146px !important;
+  border-radius: 50px !important;
+}
+.dark-brown-zero::before {
+  width: 146px !important;
+  border-radius: 50px !important;
 }
