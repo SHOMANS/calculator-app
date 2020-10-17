@@ -1,7 +1,8 @@
 .main {
-  margin: 30px auto;
+  margin-top: 30px;
   background-color: aqua;
   width: 375px;
   height: 700px;
-  background-color: #FFFFFF;
+  background: inherit;
+  border: 1px solid #EEE;
 }
