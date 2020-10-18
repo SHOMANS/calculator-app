@@ -25,6 +25,14 @@
   position: relative;
 }
 
+@media (max-width: 576px) {
+  .btns button {
+    width: 54px;
+    height: 56px;
+  }
+}
+
+
 .btns button::after {
   content: "";
   display: block;
