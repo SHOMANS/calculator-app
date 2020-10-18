@@ -5,7 +5,7 @@
   font-size: 80px;
   text-align: right;
   overflow: hidden;
-  min-height: 230px;
+  min-height: 170px;
   padding: 35px 35px 0;
   width: 100%;
   border: none;
@@ -13,4 +13,12 @@
   background: inherit;
   border: 1px solid #eee;
   color: #eee;
+}
+
+@media (max-width: 576px) {
+  .input-output {
+    font-size: 70px;
+    padding: 10px 10px 0;
+    height: 30px;
+  }
 }
