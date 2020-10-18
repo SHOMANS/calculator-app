@@ -4,5 +4,22 @@
   width: 375px;
   height: 700px;
   background: inherit;
-  border: 1px solid #EEE;
+  border: 1px solid #eee;
+  display: block;
+}
+@media (max-width: 576px) {
+  .hidden {
+    display: none;
+  }
+  .main {
+    margin: 0;
+    width: 100%;
+    align-self: center;
+    height: 100vh;
+  }
+}
+@media (max-width: 1080px) and (min-width: 577px){
+  .hiddenS {
+    display: none;
+  }
 }

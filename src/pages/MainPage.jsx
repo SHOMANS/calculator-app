@@ -5,9 +5,9 @@ import "./style.css";
 function MainPage() {
   return (
     <div className="all">
-      <Main />
-      <Main />
-      <Main />
+      <Main className="hiddenS" />
+      <Main className="hidden" />
+      <Main className="hidden" />
     </div>
   );
 }
