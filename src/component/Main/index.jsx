@@ -149,8 +149,9 @@ class Main extends React.Component {
 
   render() {
     const { inInput1, inInput2, calculation } = this.state;
+    const { className } = this.props;
     return (
-      <main className="main">
+      <main className={`main ${className}`}>
         <Input
           inInput1={inInput1}
           inInput2={inInput2}
